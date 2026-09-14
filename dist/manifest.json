@@ -1,0 +1,11 @@
+{
+  "name": "VirtualDimension",
+  "version_number": "1.2.0",
+  "website_url": "",
+  "description": "Turns the vanilla ILS into a dimension tower: remote supply slots upload surplus into a galaxy-shared storage; remote demand slots pull from it - cross-planet logistics without ships. Alt+5 opens the inventory UI (per-item caps 0-10M).",
+  "dependencies": [
+    "xiaoye97-BepInEx-5.4.5",
+    "CommonAPI-CommonAPI-1.6.7",
+    "CommonAPI-DSPModSave-1.2.2"
+  ]
+}
