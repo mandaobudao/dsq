@@ -7,7 +7,7 @@ namespace VirtualDimension
     {
         public const string GUID = "org.trae.virtualdimension";
         public const string NAME = "VirtualDimension";
-        public const string VERSION = "1.2.0";
+        public const string VERSION = "1.2.1";
 
         // The vanilla interstellar logistics station (ILS, 2104) IS the virtual dimension tower.
         // We do not register any custom proto; the mod only adds dimension behavior on top of it.

@@ -113,7 +113,7 @@ namespace VirtualDimension
 
             int kinds = 0;
             long total = 0;
-            foreach (KeyValuePair<int, int> kv in dim.Counts)
+            foreach (KeyValuePair<int, int> kv in dim.GetCountsSnapshot())
             {
                 if (kv.Value > 0)
                 {
@@ -210,11 +210,11 @@ namespace VirtualDimension
             if (string.IsNullOrWhiteSpace(search))
             {
                 HashSet<int> union = new HashSet<int>();
-                foreach (int id in dim.Counts.Keys)
-                    if (dim.GetCount(id) > 0)
-                        union.Add(id);
-                foreach (int id in dim.Limits.Keys)
-                    union.Add(id);
+                foreach (var kv in dim.GetCountsSnapshot())
+                    if (kv.Value > 0)
+                        union.Add(kv.Key);
+                foreach (var kv in dim.GetLimitsSnapshot())
+                    union.Add(kv.Key);
                 result.AddRange(union);
                 result.Sort((a, b) =>
                 {
@@ -255,7 +255,7 @@ namespace VirtualDimension
 
             int count = dim.GetCount(itemId);
             int limit = dim.GetLimit(itemId);
-            bool custom = dim.Limits.ContainsKey(itemId);
+            bool custom = dim.IsCustomLimit(itemId);
             bool isBuilding = proto.IsEntity;
 
             if (!_buffers.TryGetValue(itemId, out string buf) || string.IsNullOrEmpty(buf))
