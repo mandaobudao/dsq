@@ -6,6 +6,7 @@ Turns the vanilla Interstellar Logistic Station (ILS) into a "Virtual Dimension 
 
 - **星际供应** slot: surplus above half of the slot cap uploads into the shared dimension (local logistics have priority, supply never pulls back). 星际供应槽把超过槽位上限一半的部分存入维度（本地优先，只出不进）。
 - **星际需求** slot: pulls from the dimension up to half of the slot cap — only stations you explicitly set to remote demand receive items. 星际需求槽从维度补货至上限一半；只有明确设为星际需求的站点才会收到维度物品。
+- **Orbital collectors on gas giants** automatically upload everything above half of each storage slot. 气态行星轨道采集器自动上传每个存储槽超出一半的部分。
 - Cross-planet transfer costs only power — no ships involved. 跨星球传输只耗电，无需飞船。
 - Local drone logistics work exactly like vanilla and combine freely. 本地小飞机物流与原版一致，可自由组合。
 - **Alt+5** dimension inventory: search items and set per-item caps 0 ~ 10,000,000; resizable window. Alt+5 打开维度界面：搜索物品、设置每种物品上限（0–1000 万），窗口可拖拽调整大小。

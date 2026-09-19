@@ -20,19 +20,14 @@ namespace VirtualDimension
     {
         private Harmony _harmony;
         private PressKeyBind _openUiKey;
-        private ConfigEntry<int> _transferPerTick;
 
         private void Awake()
         {
             VDMod.ConfigFile = Config;
-            _transferPerTick = Config.Bind("General", "TransferPerTick", VDMod.DEFAULT_TRANSFER_PER_TICK,
-                "Items transferred per tick (60 ticks/s) between a tower slot and the dimension.");
             VDMod.WindowWidthEntry = Config.Bind("UI", "WindowWidth", VDMod.DEFAULT_WINDOW_WIDTH,
                 "Saved width of the Alt+5 dimension window (resizable via the bottom-right grip).");
             VDMod.WindowHeightEntry = Config.Bind("UI", "WindowHeight", VDMod.DEFAULT_WINDOW_HEIGHT,
                 "Saved height of the Alt+5 dimension window.");
-
-            VDMod.TransferPerTick = Mathf.Clamp(_transferPerTick.Value, 1, 10_000_000);
 
             _harmony = new Harmony(VDMod.GUID);
             _harmony.PatchAll(Assembly.GetExecutingAssembly());

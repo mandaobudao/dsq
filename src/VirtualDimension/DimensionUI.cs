@@ -149,7 +149,7 @@ namespace VirtualDimension
 
             GUILayout.EndScrollView();
 
-            GUILayout.Label("提示：星际供应槽把超出上限一半的部分存入维度（只出不进）；只有设置为星际需求的站点才从维度收货（补至上限一半）。本地小飞机照常工作，可与星际模式组合。跨星球无需飞船。",
+            GUILayout.Label("提示：星际供应槽把超出上限一半的部分即时全部存入维度（只出不进）；星际需求槽即时补满整个槽位。气态行星轨道采集器同样自动上传超出一半的部分。本地小飞机照常工作，可与星际模式组合。跨星球无需飞船。",
                 _mutedStyle);
 
             GUILayout.EndVertical();

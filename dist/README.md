@@ -9,6 +9,7 @@ Turns the vanilla Interstellar Logistic Station (ILS) into a "Virtual Dimension 
 - **Galaxy-shared dimension storage** — upload at any ILS, withdraw at any ILS, in any star system. 全星系共享存储，任意星球存取。
 - **星际供应 (interstellar supply)** slot: items above half of the slot cap flow into the dimension — local logistics always have priority. Supply slots never pull from the dimension. 星际供应槽把超过槽位上限一半的部分存入维度（本地优先，只出不进）。
 - **星际需求 (interstellar demand)** slot: pulls from the dimension up to half of the slot cap. Only stations you explicitly set to interstellar demand ever receive dimension items. 星际需求槽从维度补货至上限一半；只有明确设为星际需求的站点才会收到维度物品。
+- **Orbital collectors on gas giants 气态行星轨道采集器** automatically upload everything above half of each storage slot — no need to ship resources out. 气态行星轨道采集器自动上传每个存储槽超出一半的部分，无需飞船转运。
 - Cross-planet transfer costs only power — the dimension link needs no ships or drones. 跨星球传输只耗电，无需飞船。
 - Local drone logistics keep working exactly like vanilla and combine freely with the dimension (e.g. 本地需求 + 星际供应 = drones gather local goods, surplus uploads). 本地小飞机物流与原版一致，可自由组合。
 - **Alt+5** opens the dimension inventory: browse stored items, search, and set per-item caps 0 ~ 10,000,000 (buildings default 50, items default 2,000,000). The window is resizable — drag the bottom-right corner. Alt+5 打开维度界面：查看库存、搜索、设置每种物品上限（建筑默认 50，物品默认 200 万），窗口可拖拽调整大小。
@@ -30,9 +31,10 @@ Turns the vanilla Interstellar Logistic Station (ILS) into a "Virtual Dimension 
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| `General / TransferPerTick` | `3600` | Items moved per tick (60 ticks/s) between a tower slot and the dimension. |
 | `UI / WindowWidth` | `1000` | Saved width of the Alt+5 window. |
 | `UI / WindowHeight` | `620` | Saved height of the Alt+5 window. |
+
+Transfers between slots/collectors and the dimension are instant and uncapped — the moment a supply slot holds more than half its cap the surplus goes in; a demand slot fills to its full cap immediately. 槽位与维度之间的传输即时且不限速：供应槽一旦超过一半立即全部上传，需求槽立即补满。
 
 ## Requirements 环境
 

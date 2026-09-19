@@ -14,6 +14,12 @@ namespace VirtualDimension
     {
         public static void Postfix(StationComponent __instance, PlanetFactory factory, float power)
         {
+            // Orbital collectors always upload to the dimension (they have no power gate).
+            if (__instance.isCollector)
+            {
+                StationLogic.Service(__instance, factory);
+                return;
+            }
             if (power > 0.01f && Content.IsTowerEntity(factory, __instance))
                 StationLogic.Service(__instance, factory);
         }
